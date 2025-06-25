@@ -7,13 +7,13 @@ Sitio web estatico de venta de productos CBD: marihuana, hachís, extractos, ace
 KARAKI es una maqueta de e-commerce para productos de CBD.  
 Incluye un **header** con logo, navegación y sección de usuario, un **grid** de productos con efecto hover, una **exposicion** de imágenes y un **footer** con redes sociales y enlaces de contacto.
 
-## 🚀 Tecnologías
+## 📟 Tecnologías
 
 - **HTML5** (estructura principal)
 - **CSS** (Grid, Flexbox y media queries) 
 - **Imágenes** en carpeta `img/` para iconos y productos 
 
-## 🚀 Estructura de archivos
+## 🎚 Estructura de archivos
 
 ```text
 KARAKI/
