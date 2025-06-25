@@ -1,0 +1,368 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+p {
+  line-height: 1.5;
+}
+.grid-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+}
+
+.cabecera {
+  width: 100%;
+  height: 20%;
+
+  grid-template-rows: 1;
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 10px;
+}
+.cabecera .logo {
+  width: 200px;
+  grid-column: 2/3;
+}
+.cabecera > .name {
+  grid-column: 1/2;
+}
+
+.cabecera > .sesion {
+  grid-column: 3/4;
+}
+
+.sesion {
+  grid-template-columns: 1fr 0.75fr 0.5fr 0.5fr;
+  grid-template-rows: 1;
+}
+
+.sesion > .signimg {
+  width: 40px;
+  grid-column: 2 / 3;
+  grid-row: 2 /3;
+}
+
+.sesion > .sign {
+  font-weight: bold;
+  text-align: center;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  padding-left: 10px;
+}
+
+.sesion > .shoping {
+  width: 40px;
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+}
+
+.sesion > .cest {
+  font-weight: 700;
+  text-align: center;
+  grid-column: 3/4;
+  grid-row: 2/3;
+  transition: color 0.2s;
+}
+
+.cest:hover {
+  color: green;
+  cursor: pointer;
+}
+
+.sign:hover {
+  color: rgb(119, 0, 128);
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.marihuana > a:hover {
+  color: rgb(64, 128, 0);
+  cursor: pointer;
+}
+
+.marihuana,
+.hachis {
+  display: flex;
+  gap: 15px;
+}
+.blog {
+  display: flex;
+  gap: 40px;
+}
+
+.hachis > a:hover {
+  color: rgb(128, 53, 0);
+  cursor: pointer;
+}
+
+.blog > a:hover {
+  color: rgb(2, 0, 128);
+  cursor: pointer;
+}
+
+.info1 {
+  border: 1px solid gray;
+
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  gap: 200px;
+  padding: 5px;
+  justify-content: center;
+}
+
+.info1 > h4 {
+  font-weight: lighter;
+}
+
+.info2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  width: 100%;
+}
+.info2 {
+  text-transform: uppercase;
+  border: 0.5px solid green;
+
+  font-size: 60px;
+  font-weight: lighter;
+}
+.sentence {
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 300;
+}
+
+.exposicion {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.producto > img {
+  width: 300px;
+}
+
+.producto > h4 {
+  display: flex;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: lighter;
+  text-transform: uppercase;
+  justify-content: center;
+}
+.producto > p {
+  margin-top: 10px;
+  display: flex;
+
+  font-weight: lighter;
+
+  justify-content: center;
+}
+
+.producto {
+  transition: transform 0.3s ease; /* Transición suave de la transformación */
+}
+
+.producto:hover {
+  transform: scale(1.1); /* Escala del 110% al pasar el ratón */
+}
+
+.FAQ {
+  /* justify-content: start; */
+
+  gap: 50px;
+  grid-template-columns: 1;
+  /* grid-template-rows: 1000px 300px 400px 500px 500px; */
+  grid-template-rows: 5;
+  margin: 50px;
+}
+
+.FAQ > article > h1 {
+  margin-bottom: 15px;
+}
+
+.resumen {
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1;
+}
+
+.resumen > img {
+  width: 200px;
+}
+.resumen > img:nth-of-type(1) {
+  grid-column: 2/3;
+}
+.resumen > img:nth-of-type(2) {
+  grid-column: 3/4;
+}
+.resumen > img:nth-of-type(3) {
+  grid-column: 4/5;
+}
+
+footer {
+  margin-top: 50px;
+  background-color: rgba(211, 206, 206, 0.992);
+  width: 100%;
+  padding-bottom: 130px;
+}
+
+footer > .redes > a > img {
+  width: 50px;
+}
+
+footer > .redes {
+  height: 200px;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+footer > .redes > a:nth-of-type(1) {
+  grid-column: 2/3;
+}
+footer > .redes > a:nth-of-type(2) {
+  grid-column: 3/4;
+}
+footer > .redes > a:nth-of-type(3) {
+  grid-column: 4/5;
+}
+footer > .redes > a:nth-of-type(4) {
+  grid-column: 5/6;
+}
+
+.finalinfo {
+  grid-template-columns: repeat(3, 1fr);
+  grid-row: 1;
+  margin-bottom: 20px;
+}
+.finalinfo > p {
+  font-weight: 400;
+  font-size: 15px;
+  margin: 20px;
+  grid-column: 1/2;
+}
+.finalinfo > .atencion {
+  width: 300px;
+  grid-column: 2/3;
+  grid-template-rows: repeat(3, 50px);
+}
+.finalinfo > .atencion > h4 {
+  font-weight: 500;
+}
+.finalinfo > .atencion > h4:nth-of-type(1) {
+  grid-row: 1/2;
+}
+.finalinfo > .atencion > h4:nth-of-type(2) {
+  grid-row: 2/3;
+}
+.finalinfo > .atencion > h4:nth-of-type(3) {
+  grid-row: 3/4;
+}
+
+.finalinfo > .minimenu {
+  width: 300px;
+  grid-template-rows: repeat(6, 40px);
+  column-gap: 10px;
+  font-size: 20px;
+}
+
+.finalinfo > .minimenu > h5 > a {
+  font-weight: lighter;
+}
+
+@media (max-width: 860px) {
+  .cabecera > .marihuana,
+  .hachis,
+  .blog {
+    font-size: 11px;
+  }
+  .principal > .info1 {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 430px) {
+  .cabecera > .logo {
+    width: 150px;
+  }
+  .cabecera {
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 100px 50px 30px;
+  }
+  .cabecera > .sesion {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+  .cabecera .cabecera > .name {
+    font-size: 25px;
+    margin-left: 50px;
+  }
+  .cabecera > .name2 {
+    font-size: 10px;
+  }
+  .cabecera > .marihuana,
+  .hachis,
+  .blog {
+    font-size: 10px;
+  }
+  .cabecera > .sesion > .signimg {
+    width: 30px;
+  }
+  .cabecera > .sesion > .sign {
+    font-size: 15px;
+  }
+  .cabecera > .sesion > .shoping {
+    width: 30px;
+  }
+
+  .principal > .info2 {
+    text-align: center;
+  }
+  .principal > .sentence {
+    padding: 10px;
+    text-align: center;
+  }
+  .principal > .exposicion {
+    grid-template-columns: 400px;
+    row-gap: 20px;
+  }
+  .principal > .resumen > img {
+    width: 110px;
+  }
+  footer > .redes > a > img {
+    width: 40px;
+    justify-content: center;
+  }
+  footer > .finalinfo {
+    grid-template-columns: 400px;
+    grid-template-rows: 200px 200px 200px;
+  }
+  footer > .finalinfo > p {
+    grid-row: 1/2;
+
+    justify-content: center;
+  }
+  footer > .finalinfo > .atencion {
+    grid-row: 2/3;
+    width: auto;
+    grid-column: 1/2;
+    row-gap: 20px;
+  }
+  footer > .finalinfo > .minimenu {
+    grid-row: 3/4;
+  }
+}
