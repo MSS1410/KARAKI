@@ -1,3 +1,29 @@
+/* style2Proyecto2.css (actualizado) */
+
+/* Variables CSS para mejor mantenimiento */
+:root{
+  --color-bg: #ffffff;
+  --color-text: #111111;
+  --color-primary: #0b6a4a;
+  --color-accent: #1db954;
+  --color-muted: #f2f2f2;
+  --radius-md: 10px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.08);
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+}
+
+/* Unificación de efectos hover y transiciones comunes */
+a.btn, .btn, .cta, nav a {
+  transition: transform .15s ease, box-shadow .15s ease, background-color .2s ease, color .2s ease;
+}
+a.btn:hover, .btn:hover, .cta:hover, nav a:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ====== Estilos originales + ajustes ====== */
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +36,8 @@
 html,
 body {
   overflow-x: hidden;
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 
 p {
@@ -30,10 +58,8 @@ p {
 .cabecera {
   width: 100%;
   min-height: 80px;
-
   grid-template-rows: 1;
   grid-template-columns: repeat(3, 1fr);
-
   gap: 10px;
 }
 .cabecera .logo {
@@ -82,7 +108,7 @@ p {
 }
 
 .cest:hover {
-  color: green;
+  color: var(--color-primary);
   cursor: pointer;
 }
 
@@ -123,7 +149,6 @@ a {
 
 .info1 {
   border: 1px solid gray;
-
   margin-top: 30px;
   width: 100%;
   display: flex;
@@ -141,14 +166,12 @@ a {
   justify-content: center;
   margin-top: 40px;
   width: 100%;
-}
-.info2 {
   text-transform: uppercase;
-  border: 0.5px solid green;
-
+  border: 0.5px solid var(--color-primary);
   font-size: 60px;
   font-weight: lighter;
 }
+
 .sentence {
   margin-top: 30px;
   display: flex;
@@ -180,9 +203,7 @@ a {
 .producto > p {
   margin-top: 10px;
   display: flex;
-
   font-weight: lighter;
-
   justify-content: center;
 }
 
@@ -202,7 +223,7 @@ a {
   justify-items: center;
 }
 
-.FAQ > article > h1 {
+.FAQ > article > h2 {
   margin-bottom: 15px;
 }
 
@@ -293,11 +314,23 @@ footer > .redes > a:nth-of-type(4) {
   font-weight: lighter;
 }
 
+/* ====== Mejora móvil: hamburguesa y aire en header/nav ====== */
+.hamburger{
+  display:none;
+  font-size: 1.5rem;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  border: 0;
+  border-radius: var(--radius-md);
+  padding: .4rem .6rem;
+}
+
 @media (max-width: 430px) {
   .cabecera {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
     gap: 2px;
+    padding: var(--space-2) var(--space-2) 0;
   }
   .cabecera > .name {
     grid-column: 1/2;
@@ -316,6 +349,15 @@ footer > .redes > a:nth-of-type(4) {
     grid-column: 1 / -1;
     justify-self: center;
     padding: 10px;
+  }
+
+  .hamburger{ display:inline-block; justify-self:end; }
+  .cabecera nav{ display:none; }
+  .cabecera.nav-open nav{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    padding: var(--space-1) 0 var(--space-2);
   }
 
   .marihuana,
@@ -341,7 +383,6 @@ footer > .redes > a:nth-of-type(4) {
     flex-direction: column;
     gap: 10px;
     padding: 0 10px;
-
     align-items: center;
   }
   .info2 {
@@ -382,6 +423,7 @@ footer > .redes > a:nth-of-type(4) {
     width: 100%;
   }
 }
+
 @media (min-width: 431px) and (max-width: 1024px) {
   .cabecera {
     display: grid;
@@ -410,6 +452,15 @@ footer > .redes > a:nth-of-type(4) {
     grid-column: 3 / 4;
     grid-row: 1;
     justify-self: end;
+  }
+
+  .hamburger{ display:inline-block; justify-self:end; }
+  .cabecera nav{ display:none; }
+  .cabecera.nav-open nav{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 10px 14px;
+    padding: var(--space-1) 0 var(--space-2);
   }
 
   .cabecera .marihuana {
