@@ -1,6 +1,6 @@
-/* style2Proyecto2.css (actualizado) */
 
-/* Variables CSS para mejor mantenimiento */
+
+/* css var  */
 :root{
   --color-bg: #ffffff;
   --color-text: #111111;
@@ -14,7 +14,7 @@
   --space-3: 1.5rem;
 }
 
-/* Unificación de efectos hover y transiciones comunes */
+/* union efectos y hoovr */
 a.btn, .btn, .cta, nav a {
   transition: transform .15s ease, box-shadow .15s ease, background-color .2s ease, color .2s ease;
 }
@@ -23,7 +23,7 @@ a.btn:hover, .btn:hover, .cta:hover, nav a:hover {
   box-shadow: var(--shadow-sm);
 }
 
-/* ====== Estilos originales + ajustes ====== */
+/* reset y reajustes*/
 * {
   margin: 0;
   padding: 0;
@@ -314,7 +314,7 @@ footer > .redes > a:nth-of-type(4) {
   font-weight: lighter;
 }
 
-/* ====== Mejora móvil: hamburguesa y aire en header/nav ====== */
+/* movil -> burguir menu */
 .hamburger{
   display:none;
   font-size: 1.5rem;
