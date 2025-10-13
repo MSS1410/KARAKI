@@ -1,24 +1,29 @@
-
-
 /* css var  */
-:root{
+:root {
   --color-bg: #ffffff;
   --color-text: #111111;
   --color-primary: #0b6a4a;
   --color-accent: #1db954;
   --color-muted: #f2f2f2;
   --radius-md: 10px;
-  --shadow-sm: 0 2px 8px rgba(0,0,0,.08);
-  --space-1: .5rem;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --space-1: 0.5rem;
   --space-2: 1rem;
   --space-3: 1.5rem;
 }
 
 /* union efectos y hoovr */
-a.btn, .btn, .cta, nav a {
-  transition: transform .15s ease, box-shadow .15s ease, background-color .2s ease, color .2s ease;
+a.btn,
+.btn,
+.cta,
+nav a {
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.2s ease, color 0.2s ease;
 }
-a.btn:hover, .btn:hover, .cta:hover, nav a:hover {
+a.btn:hover,
+.btn:hover,
+.cta:hover,
+nav a:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
 }
@@ -315,14 +320,14 @@ footer > .redes > a:nth-of-type(4) {
 }
 
 /* movil -> burguir menu */
-.hamburger{
-  display:none;
+.hamburger {
+  display: none;
   font-size: 1.5rem;
   background: var(--color-primary);
   color: var(--color-bg);
   border: 0;
   border-radius: var(--radius-md);
-  padding: .4rem .6rem;
+  padding: 0.4rem 0.6rem;
 }
 
 @media (max-width: 430px) {
@@ -351,10 +356,15 @@ footer > .redes > a:nth-of-type(4) {
     padding: 10px;
   }
 
-  .hamburger{ display:inline-block; justify-self:end; }
-  .cabecera nav{ display:none; }
-  .cabecera.nav-open nav{
-    display:flex;
+  .hamburger {
+    display: inline-block;
+    justify-self: end;
+  }
+  .cabecera nav {
+    display: none;
+  }
+  .cabecera.nav-open nav {
+    display: flex;
     flex-wrap: wrap;
     gap: 8px 12px;
     padding: var(--space-1) 0 var(--space-2);
@@ -422,6 +432,16 @@ footer > .redes > a:nth-of-type(4) {
     text-align: center;
     width: 100%;
   }
+  .hamburger {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    justify-self: center;
+    align-self: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    line-height: 1;
+  }
 }
 
 @media (min-width: 431px) and (max-width: 1024px) {
@@ -454,10 +474,22 @@ footer > .redes > a:nth-of-type(4) {
     justify-self: end;
   }
 
-  .hamburger{ display:inline-block; justify-self:end; }
-  .cabecera nav{ display:none; }
-  .cabecera.nav-open nav{
-    display:flex;
+  .hamburger {
+    display: inline-block;
+
+    grid-column: 3 / 3;
+
+    grid-row: 3;
+
+    align-self: center;
+    padding: 0.5rem 0.75rem;
+    line-height: 1;
+  }
+  .cabecera nav {
+    display: none;
+  }
+  .cabecera.nav-open nav {
+    display: flex;
     flex-wrap: wrap;
     gap: 10px 14px;
     padding: var(--space-1) 0 var(--space-2);
