@@ -63,7 +63,7 @@ p {
 .cabecera {
   width: 100%;
   min-height: 80px;
-  grid-template-rows: 1;
+  grid-template-rows: auto;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
@@ -79,75 +79,74 @@ p {
   grid-column: 3/4;
 }
 
+/*  sesion nuevo nav con lista */
+
+/* cambio de grid con divs a lista con flex y con enlaces .sign y cest */
 .sesion {
-  grid-template-columns: 1fr 0.75fr 0.5fr 0.5fr;
-  grid-template-rows: 1;
+  display: flex;
+  justify-content: center;
 }
-
-.sesion > .signimg {
+.sesion ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+.sesion li {
+  margin: 0;
+}
+.sesion .signimg,
+.sesion .shoping {
   width: 40px;
-  grid-column: 2 / 3;
-  grid-row: 2 /3;
+  height: 40px;
 }
-
-.sesion > .sign {
-  font-weight: bold;
-  text-align: center;
-  grid-column: 1/2;
-  grid-row: 2/3;
-  padding-left: 10px;
-}
-
-.sesion > .shoping {
-  width: 40px;
-  grid-column: 4 / 5;
-  grid-row: 2 / 3;
-}
-
-.sesion > .cest {
+.sesion a.sign,
+.sesion a.cest {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-weight: 700;
   text-align: center;
-  grid-column: 3/4;
-  grid-row: 2/3;
   transition: color 0.2s;
 }
-
-.cest:hover {
+.sesion a.cest:hover {
   color: var(--color-primary);
   cursor: pointer;
 }
-
-.sign:hover {
+.sesion a.sign:hover {
   color: rgb(119, 0, 128);
   cursor: pointer;
 }
 
+/* Enlaces generales */
 a {
   text-decoration: none;
   color: black;
 }
 
-.marihuana > a:hover {
-  color: rgb(64, 128, 0);
-  cursor: pointer;
-}
+/*  menus principals —  nav > ul > li > a  */
+/* en los container nav mantengo clases, el flex no se aplica al UL */
 
-.marihuana,
-.hachis {
+.marihuana ul,
+.hachis ul {
   display: flex;
   gap: 15px;
 }
-.blog {
+.blog ul {
   display: flex;
   gap: 40px;
 }
-
-.hachis > a:hover {
+.marihuana a:hover {
+  color: rgb(64, 128, 0);
+  cursor: pointer;
+}
+.hachis a:hover {
   color: rgb(128, 53, 0);
   cursor: pointer;
 }
-
-.blog > a:hover {
+.blog a:hover {
   color: rgb(2, 0, 128);
   cursor: pointer;
 }
@@ -234,7 +233,7 @@ a {
 
 .resumen {
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 1;
+  grid-template-rows: auto;
 }
 
 .resumen > img {
@@ -308,14 +307,19 @@ footer > .redes > a:nth-of-type(4) {
   grid-row: 3/4;
 }
 
+/* footer arreglado  */
 .finalinfo > .minimenu {
   width: 300px;
+  /* mantenemos */
+}
+.finalinfo > .minimenu ul {
+  display: grid;
   grid-template-rows: repeat(6, 40px);
+  row-gap: 10px;
   column-gap: 10px;
   font-size: 20px;
 }
-
-.finalinfo > .minimenu > h5 > a {
+.finalinfo > .minimenu a {
   font-weight: lighter;
 }
 
@@ -360,19 +364,27 @@ footer > .redes > a:nth-of-type(4) {
     display: inline-block;
     justify-self: end;
   }
+
+  /* de primeras temenos los nav oculto por defecto, al abrir mostramos ul con flex */
+
   .cabecera nav {
     display: none;
   }
   .cabecera.nav-open nav {
+    display: block;
+  }
+  .cabecera.nav-open nav ul {
     display: flex;
     flex-wrap: wrap;
     gap: 8px 12px;
     padding: var(--space-1) 0 var(--space-2);
+    justify-content: center;
   }
 
-  .marihuana,
-  .hachis,
-  .blog {
+  /* lists para phone */
+  .marihuana ul,
+  .hachis ul,
+  .blog ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -381,7 +393,7 @@ footer > .redes > a:nth-of-type(4) {
     font-size: 0.85rem;
   }
 
-  .sesion {
+  .sesion ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -395,14 +407,21 @@ footer > .redes > a:nth-of-type(4) {
     padding: 0 10px;
     align-items: center;
   }
+  .sentence {
+    /* anular  flex */
+    display: block;
+    /* alineamos texto izq */
+    text-align: left;
+    /* separamos del borde izq */
+    padding-inline-start: 10px;
+  }
+
   .info2 {
     font-size: 2rem;
     text-align: center;
     padding: 0 10px;
   }
-  .info1 > .sentence {
-    margin-left: 10px;
-  }
+
   .principal > .exposicion {
     grid-template-columns: 1fr;
     row-gap: 20px;
@@ -476,44 +495,45 @@ footer > .redes > a:nth-of-type(4) {
 
   .hamburger {
     display: inline-block;
-
     grid-column: 3 / 3;
-
     grid-row: 3;
-
     align-self: center;
     padding: 0.5rem 0.75rem;
     line-height: 1;
   }
+
+  /* mismo metodo para navs ocultos */
   .cabecera nav {
     display: none;
   }
   .cabecera.nav-open nav {
+    display: block;
+  }
+  .cabecera.nav-open nav ul {
     display: flex;
     flex-wrap: wrap;
     gap: 10px 14px;
     padding: var(--space-1) 0 var(--space-2);
+    justify-content: center;
   }
 
+  /* mantenemos ubis de los 3 grupos en tablt */
   .cabecera .marihuana {
     grid-column: 1 / 2;
     grid-row: 2;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
   }
   .cabecera .hachis {
     grid-column: 2 / 3;
     grid-row: 2;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
   }
   .cabecera .blog {
     grid-column: 3 / 4;
     grid-row: 2;
+  }
+
+  .cabecera .marihuana ul,
+  .cabecera .hachis ul,
+  .cabecera .blog ul {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -527,8 +547,14 @@ footer > .redes > a:nth-of-type(4) {
     font-size: 1.8rem;
   }
 
+  .info1 > h4 {
+    text-align: center;
+    justify-content: center;
+    margin-right: 5px;
+    letter-spacing: 1px;
+  }
   .info2 {
-    font-size: calc(2rem + 1.5vw);
+    font-size: 2rem;
   }
 
   footer > .redes {
