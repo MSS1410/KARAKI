@@ -22,7 +22,7 @@
   </head>
 
   <body>
-    <header class="cabecera grid-container">
+    <header class="cabecera grid-container" id="site-nav">
       <h1 class="name">KARAKI</h1>
 
       <img
@@ -32,75 +32,113 @@
       />
 
       <!-- menu de seccion -->
-      <nav class="sesion grid-container">
-        <img class="signimg" src="./img/perfil.png" alt="login img" />
-        <div class="sign"><a href="#">Sign in // Log in</a></div>
-        <img class="shoping" src="./img/shop.png" alt="carrito img" />
-        <div class="cest"><a href="#"></a>Cesta</div>
+      <!--Reescrito como lista, cesta quedara como <a< -->
+      <nav class="sesion grid-container" aria-label="Acceso y carrito">
+        <ul class="sesion-list">
+          <li>
+            <a href="#" class="sign">
+              <img class="signimg" src="./img/perfil.png" alt="login img" />
+              <span>Sign in // Log in</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="cest">
+              <img class="shoping" src="./img/shop.png" alt="carrito img" />
+              <span>Cesta</span>
+            </a>
+          </li>
+        </ul>
       </nav>
 
       <!-- principal menu -->
-      <nav class="marihuana">
-        <a
-          href="https://thetreecbd.com/es/flores-cbd"
-          target="_blank"
-          rel="noopener noreferrer"
-          >MARIHUANA CBD</a
-        >
-        <a
-          href="https://www.supercogollo.es/mini-buds-cbd/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >SMALL BUDS</a
-        >
-        <a
-          href="https://thetreecbd.com/es/flores-cbd"
-          target="_blank"
-          rel="noopener noreferrer"
-          >MARIHUANA BOOST</a
-        >
+      <!-- enlaces pasados a lista: nav -> ul -> li -> a  -->
+      <nav class="marihuana" aria-label="Categorías de marihuana">
+        <ul>
+          <li>
+            <a
+              href="https://thetreecbd.com/es/flores-cbd"
+              target="_blank"
+              rel="noopener noreferrer"
+              >MARIHUANA CBD</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.supercogollo.es/mini-buds-cbd/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >SMALL BUDS</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://thetreecbd.com/es/flores-cbd"
+              target="_blank"
+              rel="noopener noreferrer"
+              >MARIHUANA BOOST</a
+            >
+          </li>
+        </ul>
       </nav>
 
-      <nav class="hachis">
-        <a
-          href="https://www.justbob.es/hachis-cbd/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >HACHIS CBD</a
-        >
-        <a
-          href="https://cbd-alchemy.com/es/producto/crumble-cbd/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >EXTRACTOS CBD</a
-        >
-        <a
-          href="https://www.mycbd.es/producto/aceite-de-cbd-10-mycbd-oil-spray-sublingual-10ml/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >ACEITE CBD</a
-        >
+      <!-- enlaces corregids a nav -> ul .> li -> a -->
+      <nav class="hachis" aria-label="Hachís y extractos">
+        <ul>
+          <li>
+            <a
+              href="https://www.justbob.es/hachis-cbd/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >HACHIS CBD</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://cbd-alchemy.com/es/producto/crumble-cbd/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >EXTRACTOS CBD</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.mycbd.es/producto/aceite-de-cbd-10-mycbd-oil-spray-sublingual-10ml/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >ACEITE CBD</a
+            >
+          </li>
+        </ul>
       </nav>
 
-      <nav class="blog">
-        <a
-          href="https://thetreecbd.com/es"
-          target="_blank"
-          rel="noopener noreferrer"
-          >KIT</a
-        >
-        <a
-          href="https://thetreecbd.com/es"
-          target="_blank"
-          rel="noopener noreferrer"
-          >OFERTAS CBD</a
-        >
-        <a
-          href="https://thetreecbd.com/es/blog"
-          target="_blank"
-          rel="noopener noreferrer"
-          >BLOG</a
-        >
+      <!--  enlaces -> lista-->
+      <nav class="blog" aria-label="Otros">
+        <ul>
+          <li>
+            <a
+              href="https://thetreecbd.com/es"
+              target="_blank"
+              rel="noopener noreferrer"
+              >KIT</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://thetreecbd.com/es"
+              target="_blank"
+              rel="noopener noreferrer"
+              >OFERTAS CBD</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://thetreecbd.com/es/blog"
+              target="_blank"
+              rel="noopener noreferrer"
+              >BLOG</a
+            >
+          </li>
+        </ul>
       </nav>
 
       <!-- tittle secundario h2 -->
@@ -347,9 +385,12 @@
       </div>
 
       <section class="finalinfo grid-container">
+        <!-- cambio br< >br por dos parrafos -->
         <p>
           Karaki selecciona las mejores producciones de Marihuana CBD de toda
-          Europa. <br /><br />
+          Europa.
+        </p>
+        <p>
           Nuestro objetivo es hacer accesible la mejor calidad a precios
           competitivos. Estamos en contra de las personas y las empresas que
           tratan de hacerse ricos en un producto maravilloso que debería ser
@@ -362,14 +403,17 @@
           <h4>Fijo: +34 932 209 373</h4>
         </div>
 
-        <div class="minimenu grid-container">
-          <h5><a href="#">Privacy Policy</a></h5>
-          <h5><a href="#">Cookie Policy</a></h5>
-          <h5><a href="#">Términos y Condiciones</a></h5>
-          <h5><a href="#">Sobre Nosotros</a></h5>
-          <h5><a href="#">Contactos</a></h5>
-          <h5><a href="#">FAQ</a></h5>
-        </div>
+        <!-- Arreglo de footer a nav/ul/li/a -->
+        <nav class="minimenu grid-container" aria-label="Enlaces legales">
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+            <li><a href="#">Términos y Condiciones</a></li>
+            <li><a href="#">Sobre Nosotros</a></li>
+            <li><a href="#">Contactos</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </nav>
       </section>
     </footer>
 
